@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsby starter and Strapi and Cloudinary and Heroku for backend and netlify for front end`,
+    description: `Gatsby starter and Strapi and Cloudinary and Heroku ref for creating an app with all of these`,
+    author: `aquasar.io`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,7 +20,9 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: process.env.BACKEND_URL,
+        apiURL: process.env.DEPLOY_URL
+          ? "https://gatsby-with-strapi-demo-100.herokuapp.com"
+          : "http://localhost:1337",
         queryLimit: 1000, // Default to 100
         contentTypes: [`article`, `user`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
