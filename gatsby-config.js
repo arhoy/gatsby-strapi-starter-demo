@@ -26,10 +26,10 @@ module.exports = {
         queryLimit: 1000, // Default to 100
         contentTypes: [`article`, `user`],
         // Possibility to login with a strapi user, when content types are not publically available (optional).
-        loginData: {
-          identifier: process.env.STRAPI_USERNAME,
-          password: process.env.STRAPI_PASSWORD,
-        },
+        // loginData: {
+        //   identifier: process.env.STRAPI_USERNAME,
+        //   password: process.env.STRAPI_PASSWORD,
+        // },
       },
     },
     `gatsby-transformer-sharp`,
